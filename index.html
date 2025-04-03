@@ -27,18 +27,8 @@
 
         <div class="overall-inventory">
             <h3>Overall Inventory</h3>
-            <p>Total Products</p>
+            <p>Total Products: 0</p>
             <button class="add-product">Add Product</button>
-            <div class="add-product-form">
-                <input type="text" id="productName" placeholder="Product Name">
-                <input type="number" id="productPrice" placeholder="Buying Price">
-                <input type="number" id="productQuantity" placeholder="Quantity">
-                <select id="productAvailability">
-                    <option value="In Stock">In Stock</option>
-                    <option value="Out of Stock">Out of Stock</option>
-                </select>
-                <button id="saveProduct">Save Product</button>
-            </div>            
         </div>
 
         <div class="product-table">
@@ -55,29 +45,23 @@
         </div>
     </div>
 
-    <!-- Firebase Configuration -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+    <!-- Ventana emergente para agregar un producto -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Product</h2>
+            <input type="text" id="productName" placeholder="Product Name">
+            <input type="number" id="productPrice" placeholder="Buying Price">
+            <input type="number" id="productQuantity" placeholder="Quantity">
+            <select id="productAvailability">
+                <option value="In Stock">In Stock</option>
+                <option value="Out of Stock">Out of Stock</option>
+            </select>
+            <button id="saveProduct">Save Product</button>
+        </div>
+    </div>
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCpuwAn6zyArQpxGOzVldLtGca-Xro811g",
-            authDomain: "proyecto-inventario-japp.firebaseapp.com",
-            projectId: "proyecto-inventario-japp",
-            storageBucket: "proyecto-inventario-japp.firebasestorage.app",
-            messagingSenderId: "1068467625926",
-            appId: "1:1068467625926:web:d6201e0c1989a8d71edcc7"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-    </script>
-
-    
-<script type="module" src="app.js"></script>
+    <script type="module" src="app.js"></script>
 
 </body>
 </html>

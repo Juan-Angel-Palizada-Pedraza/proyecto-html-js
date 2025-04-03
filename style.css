@@ -1,19 +1,22 @@
+/* Estilos generales */
 body {
-    display: flex;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
+/* Barra lateral */
 .sidebar {
     width: 250px;
-    background: #f4f4f4;
+    background-color: #2c3e50;
+    color: white;
     padding: 20px;
     height: 100vh;
 }
 
 .sidebar h2 {
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 .sidebar ul {
@@ -26,38 +29,36 @@ body {
     cursor: pointer;
 }
 
-.main-content {
-    flex-grow: 1;
-    padding: 20px;
+.sidebar ul li:hover {
+    background-color: #34495e;
 }
 
-.search-bar {
-    margin-bottom: 20px;
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
 }
 
 .search-bar input {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
-}
-
-.overall-inventory {
-    background: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
+/* Botón agregar producto */
 .add-product {
-    background: blue;
+    background-color: #3498db;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
 }
 
+.add-product:hover {
+    background-color: #2980b9;
+}
+
+/* Tabla de productos */
 .product-table table {
     width: 100%;
     border-collapse: collapse;
@@ -69,28 +70,53 @@ body {
     text-align: left;
 }
 
-.add-product-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
+/* Estilos para la ventana emergente */
+.modal {
+    display: none; /* Oculta la ventana emergente */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
 }
 
-.add-product-form input, .add-product-form select {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
 }
 
-.add-product-form button {
-    padding: 8px;
-    background-color: #007bff;
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilos para los inputs y botones dentro del modal */
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #27ae60;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-.add-product-form button:hover {
-    background-color: #0056b3;
+.modal-content button:hover {
+    background-color: #2ecc71;
 }
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - 😉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>KANBAN</h2>
+        <ul>
+            <li>Dashboard</li>
+            <li>Inventory</li>
+            <li>Reports</li>
+            <li>Suppliers</li>
+            <li>Orders</li>
+            <li>Manage Store</li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="search-bar">
+            <input type="text" placeholder="Search product">
+        </div>
+
+        <div class="overall-inventory">
+            <h3>Overall Inventory</h3>
+            <p>Total Products</p>
+            <button class="add-product">Add Product</button>
+            <div class="add-product-form">
+                <input type="text" id="productName" placeholder="Product Name">
+                <input type="number" id="productPrice" placeholder="Buying Price">
+                <input type="number" id="productQuantity" placeholder="Quantity">
+                <select id="productAvailability">
+                    <option value="In Stock">In Stock</option>
+                    <option value="Out of Stock">Out of Stock</option>
+                </select>
+                <button id="saveProduct">Save Product</button>
+            </div>            
+        </div>
+
+        <div class="product-table">
+            <h3>Products</h3>
+            <table>
+                <tr>
+                    <th>Products</th>
+                    <th>Buying Price</th>
+                    <th>Quantity</th>
+                    <th>Availability</th>
+                </tr>
+                <!-- Aquí se llenarán los datos de Firebase -->
+            </table>
+        </div>
+    </div>
+
+    <!-- Firebase Configuration -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpuwAn6zyArQpxGOzVldLtGca-Xro811g",
+            authDomain: "proyecto-inventario-japp.firebaseapp.com",
+            projectId: "proyecto-inventario-japp",
+            storageBucket: "proyecto-inventario-japp.firebasestorage.app",
+            messagingSenderId: "1068467625926",
+            appId: "1:1068467625926:web:d6201e0c1989a8d71edcc7"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script>
+
+    
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
